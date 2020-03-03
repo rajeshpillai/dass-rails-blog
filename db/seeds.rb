@@ -8,11 +8,16 @@
 
 Post.destroy_all
 Category.destroy_all
-
+Tag.destroy_all
 Category.create(title: "Programming")
 Category.create(title: "Web Development")
 Category.create(title: "Ruby on Rails")
 Category.create(title: "React")
+
+Tag.create(name: "javascript")
+Tag.create(name: "react")
+Tag.create(name: "ruby")
+Tag.create(name: "node")
 
 
 Category.all.each do |category|
