@@ -36,19 +36,18 @@
       <p class="alert"><%= alert %></p>
 
       <div class="container">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <%= link_to 'Posts', posts_path, class: "nav-link" %>
-          
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Categories', categories_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Manage Tags', tags_path, class: "nav-link" %>
-          </li>
-        </ul>
-        <%= yield %>
+        <div class="row">
+          <div class="col-md-3">
+            <ul class="list-group">
+              <li class="list-group-item"><%= link_to 'Posts', posts_path, class: "nav-link" %></li>
+              <li class="list-group-item"><%= link_to 'Categories', categories_path, class: "nav-link" %></li>
+              <li class="list-group-item"><%= link_to 'Manage Tags', tags_path, class: "nav-link" %></li>
+            </ul>
+          </div>
+          <div class="col-md-9">
+            <%= yield %>
+          </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
