@@ -21,7 +21,7 @@ Tag.create(name: "node")
 
 
 Category.all.each do |category|
-    3.times do |i|
+    20.times do |i|
         Post.create(title: "Post #{i}", body: "Post details", category: category)
     end
 end
