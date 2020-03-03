@@ -29,11 +29,15 @@
       </div>
       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-      <div class="header">
-        <%= link_to 'Posts', posts_path%>
-        <%= link_to 'Categories', categories_path%>
+
+      <div class="container">
+        <div class="header">
+          <%= link_to 'Posts', posts_path%>
+          <%= link_to 'Categories', categories_path%>
         </div>
-      <%= yield %>
+        <%= yield %>
+      </div>
+    
     </div>
   </body>
 </html>
