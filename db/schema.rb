@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_140545) do
+ActiveRecord::Schema.define(version: 2020_03_03_141659) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2020_03_03_140545) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_posts_on_category_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tags", force: :cascade do |t|

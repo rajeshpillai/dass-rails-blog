@@ -25,6 +25,11 @@
     <%= form.label :category_id %>
     <%= form.collection_select :category_id , Category.all, :id, :title %>
   </div>
+  
+  <div class="field">
+      <%= form.collection_select :tag_ids, Tag.all, :id, :name, 
+          {include_blank: true}, {:multiple => true} %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
