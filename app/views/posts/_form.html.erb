@@ -27,6 +27,8 @@
   </div>
   
   <div class="field">
+      <span>TAGS:</span><br/>
+
       <%= form.collection_select :tag_ids, Tag.all, :id, :name, 
           {include_blank: true}, {:multiple => true} %>
   </div>

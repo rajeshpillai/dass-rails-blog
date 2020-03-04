@@ -23,6 +23,7 @@
           <a class="p-2 text-dark" href="#">Projects</a>
           <a class="p-2 text-dark" href="#">Resume</a>
         </nav>
+        
         <% if user_signed_in? %>
           <span class="badge text-dark">welcome <%= current_user.email %></span>
             <%=link_to "Sign out", destroy_user_session_path, method: :delete  %>
