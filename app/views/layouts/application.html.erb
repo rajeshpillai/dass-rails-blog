@@ -38,16 +38,21 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <ul class="list-group">
-              <li class="list-group-item"><%= link_to 'Posts', posts_path, class: "nav-link" %></li>
-              <li class="list-group-item"><%= link_to 'Categories', categories_path, class: "nav-link" %></li>
-              <li class="list-group-item"><%= link_to 'Manage Tags', tags_path, class: "nav-link" %></li>
-            </ul>
-          </div>
+          <% unless controller.controller_name == "home" %>
+            <%= render "layouts/meta_nav"%>
+          <% end %>
           <div class="col-md-9">
             <%= yield %>
           </div>
+          <% if controller.controller_name == "home" %>
+            <div class="col-md-3">
+            <h2>TAGS:</h2>
+              <% Tag.all.each do |t|%>
+                <span class="badge badge-info"><%= t.name %></span>
+              <% end %>
+            </div>
+          <% end %>
+          
         </div>
     </div>
 
