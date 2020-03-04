@@ -59,3 +59,6 @@ gem 'kaminari'
 
 # For ActionText
 gem 'image_processing', '~> 1.2'
+
+# For cross origin request sharing
+gem 'rack-cors'
