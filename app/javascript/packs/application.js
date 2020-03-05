@@ -22,6 +22,31 @@ require("@rails/actiontext")
 // window.jQuery = $;
 // window.$ = $;
 
+var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+
 document.addEventListener("turbolinks:load", ()=> {
     $("#post_tag_ids").change(function (e) {
         let selected = $("#post_tag_ids option:selected")
@@ -29,5 +54,9 @@ document.addEventListener("turbolinks:load", ()=> {
         
         $("#post_all_tags").val(selected);
         
+    });
+
+    $("#post_all_tagsxxx").autocomplete({
+        source: availableTags
     })
 })
