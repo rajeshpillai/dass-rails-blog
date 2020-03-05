@@ -22,9 +22,18 @@ react = Tag.create(name: "react")
 ruby = Tag.create(name: "ruby")
 node = Tag.create(name: "node")
 
-admin_user = User.create(email: "rajesh@algorisys.com",
-        username:"admin", admin: true, password:"123456",
+admin_user = User.create(
+    email: "rajesh@algorisys.com",
+    username:"admin", admin: true, password:"123456",
+    password_confirmation:"123456")
+
+10.times do |i|
+    User.create(
+        email: "user#{i}@algorisys.com",
+        username:"user#{i}", admin: false, password:"123456",
         password_confirmation:"123456")
+    
+end
 
 Category.all.each do |category|
     20.times do |i|
