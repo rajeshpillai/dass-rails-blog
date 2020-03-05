@@ -8,9 +8,17 @@ class HomeController < ApplicationController
   end
 
 
-  def search
+  def tags
     if params.has_key?(:tag)
       @posts = Tag.find_by(:name => params[:tag]).posts
     end
   end
+
+  def search
+    if params.has_key?(:q)
+      #Topic.where("name like ?", "%apple%")
+      @posts = Post.where("title like ?", "%#{params[:q]}%")
+    end
+  end
+  
 end
