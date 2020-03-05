@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts
   resources :categories
-  # root "posts#index"
-  get "home/index", to: "home#index"
-  get "home/search", to: "home#search", :as => :posts_search
-  put "users/admin", to: "users#admin", :as => :make_users_admin
   root "home#index"
+  put "users/admin", to: "users#admin", :as => :make_users_admin
   
+  get "home/index", to: "home#index"
+  get "home/suggestions", to: "home#suggestions", :as => :post_suggestions
+  get "home/search", to: "home#search", :as => :posts_search
   get "home/read/:id", to: "home#read", :as => :posts_read
   get "home/tags/:tag", to: "home#tags", :as => :tag_search
 end

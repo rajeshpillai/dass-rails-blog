@@ -15,9 +15,28 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params.has_key?(:q)
+    if params.has_key?(:term)
       #Topic.where("name like ?", "%apple%")
-      @posts = Post.where("title like ?", "%#{params[:q]}%")
+      @posts = Post.where("title like ?", "%#{params[:term]}%")
+    else
+      @posts = Post.order("created_at desc")
+    end
+    respond_to do |format|
+      format.html
+      format.json  { render json: @posts}
+    end
+  end
+
+  def suggestions
+    if params.has_key?(:term)
+      #Topic.where("name like ?", "%apple%")
+      @posts = Post.where("title like ?", "%#{params[:term]}%")
+    else
+      @posts = Post.order("created_at desc")
+    end
+   
+    respond_to do |format|
+      format.json  { render json: @posts.map(&:title).to_json}
     end
   end
 

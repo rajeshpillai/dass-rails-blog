@@ -56,7 +56,13 @@ document.addEventListener("turbolinks:load", ()=> {
         
     });
 
-    $("#post_all_tags").autocomplete({
-        source: availableTags
+    $("#term").autocomplete({
+        source: "/home/suggestions",
+        _renderItem: function( ul, item ) {
+            return $( "<li>" )
+              .attr( "data-value", item.id )
+              .append( item.title )
+              .appendTo( ul );
+          }
     })
 })

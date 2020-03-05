@@ -26,7 +26,7 @@
         </nav>
         
         <%= form_with url: posts_search_path, local: true, method: :get do |form|  %>
-          <input class="p-2" name="q" type="text" placeholder="type to search post"/>
+          <input class="p-2" id="term" name="term" type="text" placeholder="type to search post"/>
         <% end %>
 
         <% if user_signed_in? %>
