@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body %>
-  </div>
-
-  <div class="field">
     <%= form.label :category_id %>
     <%= form.collection_select :category_id , Category.all, :id, :title %>
   </div>
@@ -31,6 +26,11 @@
 
       <%= form.collection_select :tag_ids, Tag.all, :id, :name, 
           {include_blank: true}, {:multiple => true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <div class="actions">
