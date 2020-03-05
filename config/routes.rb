@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   # root "posts#index"
   get "home/index", to: "home#index"
+  put "users/admin", to: "users#admin", :as => :make_users_admin
   root "home#index"
 
   get 'home/tags/:tag', to: "home#search", :as => :tag_search
