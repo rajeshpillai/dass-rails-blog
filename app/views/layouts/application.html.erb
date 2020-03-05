@@ -42,25 +42,11 @@
       <p class="alert"><%= alert %></p>
 
       <div class="container">
-
         <div class="row">
-          <% if user_signed_in? %>
-            <%= render "layouts/meta_nav"%>
-          <% end %>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <%= yield %>
           </div>
-          <% if controller.controller_name == "home" %>
-            <div class="col-md-3">
-            <h2>TAGS:</h2>
-              <% Tag.all.each do |t|%>
-                <span class="badge badge-warning">
-                   <%= link_to t.name, tag_search_path(t.name) %>
-                </span>
-              <% end %>
-            </div>
-          <% end %>
-          
+          <%= render "layouts/meta_nav"%>
         </div>
     </div>
 

@@ -1,0 +1,12 @@
+ <% if controller.controller_name == "home" %>
+<h6>TAGS</h6>
+<div class="col-md-4">
+    <div class="container">
+        <% Tag.all.each do |t|%>
+            <span class="badge badge-warning">
+                <%= link_to t.name, tag_search_path(t.name) %>
+            </span>
+        <% end %>
+    </div>
+</div>
+<% end %>
