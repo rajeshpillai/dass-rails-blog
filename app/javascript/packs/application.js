@@ -56,7 +56,7 @@ document.addEventListener("turbolinks:load", ()=> {
         
     });
 
-    $("#post_all_tagsxxx").autocomplete({
+    $("#post_all_tags").autocomplete({
         source: availableTags
     })
 })

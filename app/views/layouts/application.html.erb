@@ -51,7 +51,9 @@
             <div class="col-md-3">
             <h2>TAGS:</h2>
               <% Tag.all.each do |t|%>
-                <span class="badge badge-info"><%= t.name %></span>
+                <span class="badge badge-warning">
+                   <%= link_to t.name, tag_search_path(t.name) %>
+                </span>
               <% end %>
             </div>
           <% end %>

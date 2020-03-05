@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
       .permit(:sign_up, keys: [:username, :admin, :email, :password])
 
     devise_parameter_sanitizer
-      .permit(:account_update, keys: [:username, :admin, :email, :password, :current_password])
+      .permit(:account_update, 
+        keys: [:username, :admin, :email, :password, :current_password])
   end
 end

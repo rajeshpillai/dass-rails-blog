@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :tags
   devise_for :users
   resources :posts
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "home/index", to: "home#index"
   root "home#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'home/tags/:tag', to: "home#search", :as => :tag_search
 end
