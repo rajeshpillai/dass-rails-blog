@@ -23,7 +23,7 @@ ruby = Tag.create(name: "ruby")
 node = Tag.create(name: "node")
 
 admin_user = User.create(email: "rajesh@algorisys.com",
-        username:"admin",password:"123456",
+        username:"admin", admin: true, password:"123456",
         password_confirmation:"123456")
 
 Category.all.each do |category|
@@ -32,6 +32,7 @@ Category.all.each do |category|
         # tag = Tag.offset(tag_offset).first
         Post.create(title: "Post #{i}", 
             body: "Post details", category: category,
-            tags: i % 2 == 0 ? [javascript, react] : [ruby, node])
+            tags: i % 2 == 0 ? [javascript, react] : [ruby, node],
+            user: admin_user)
     end
 end

@@ -1,4 +1,7 @@
 # Day 3
- - Create a public blog page
- - Only allow post edit/delete by author
+ - Assign user to post
+   rails generate migration add_user_to_posts user:references
+
+ - Add role
+
  

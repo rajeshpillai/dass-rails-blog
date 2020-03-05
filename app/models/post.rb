@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :category
+  belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings
   has_rich_text :body

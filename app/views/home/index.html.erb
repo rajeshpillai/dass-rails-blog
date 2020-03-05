@@ -12,6 +12,7 @@
                             posted on
                             <cite title="Source Title">
                             <%= time_ago_in_words post.created_at %></cite>
+                            by <%= post.user.username%>
                         </footer>
                     </blockquote>
                 </div>
