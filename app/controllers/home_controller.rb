@@ -20,5 +20,11 @@ class HomeController < ApplicationController
       @posts = Post.where("title like ?", "%#{params[:q]}%")
     end
   end
+
+  def read
+    if params.has_key?(:id)
+      @post = Post.find(params[:id])
+    end
+  end
   
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "home/search", to: "home#search", :as => :posts_search
   put "users/admin", to: "users#admin", :as => :make_users_admin
   root "home#index"
-
-  get 'home/tags/:tag', to: "home#tags", :as => :tag_search
+  
+  get "home/read/:id", to: "home#read", :as => :posts_read
+  get "home/tags/:tag", to: "home#tags", :as => :tag_search
 end
