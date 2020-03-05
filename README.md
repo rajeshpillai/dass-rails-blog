@@ -7,7 +7,10 @@ Install Action Text and Active Storage
 
 * Run "rails action_text:install" from command/terminal
 
-* Run db:migrate
+ * Install Active Storage
+ rails active_storage:install
+
+* Run rails db:migrate
 
 * Add the below entry to the model
   has_rich_text :body   
@@ -15,6 +18,3 @@ Install Action Text and Active Storage
 
 * In the html add the below for rich text field
  <%= form.rich_text_area :body %>  
-
- * Install Active Storage
- rails active_storage:install

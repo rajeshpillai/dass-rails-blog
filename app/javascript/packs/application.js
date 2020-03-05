@@ -18,3 +18,16 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
+
+// window.jQuery = $;
+// window.$ = $;
+
+document.addEventListener("turbolinks:load", ()=> {
+    $("#post_tag_ids").change(function (e) {
+        let selected = $("#post_tag_ids option:selected")
+            .toArray().map(item => item.text).join();
+        
+        $("#post_all_tags").val(selected);
+        
+    })
+})
