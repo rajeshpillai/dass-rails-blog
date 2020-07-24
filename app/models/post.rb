@@ -23,4 +23,8 @@ class Post < ApplicationRecord
     self.tags.map(&:name).join(", ")
   end
 
+  def post_body
+    self.body.body
+  end
+
 end
