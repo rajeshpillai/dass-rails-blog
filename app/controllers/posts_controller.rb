@@ -13,7 +13,11 @@ class PostsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.json { render json: @post }
+      # format.json { render json: @post }
+      format.json { render json: @post.as_json(
+        only: [:id, :name, :body], 
+        include: [:user, {tags: {only:[:id, :name]}}]) 
+      }
     end
   end
 
