@@ -11,20 +11,21 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    respond_to do |format|
-      format.html
-      # format.json { render json: @post }
-      # format.json { render json: @post.as_json(
-      #   only: [:id, :name, :body], 
-      #   include: [:user, {tags: {only:[:id, :name]}}]) 
-      # }
+    # respond_to do |format|
+    #   format.html
+    #   # format.json { render json: @post }
+    #   # format.json { render json: @post.as_json(
+    #   #   only: [:id, :name, :body], 
+    #   #   include: [:user, {tags: {only:[:id, :name]}}]) 
+    #   # }
 
-      format.json { render json: @post.as_json(
-        only: [:id, :name, :body], 
-        methods: :post_body,
-        include: [:user, {tags: {only:[:id, :name]}}]) 
-      }
-    end
+    #   # With methods
+    #   format.json { render json: @post.as_json(
+    #     only: [:id, :name, :body], 
+    #     methods: :post_body,
+    #     include: [:user, {tags: {only:[:id, :name]}}]) 
+    #   }
+    # end
   end
 
   # GET /posts/new
