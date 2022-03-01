@@ -58,7 +58,7 @@ gem 'devise'
 gem 'kaminari'
 
 # For ActionText
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 # For cross origin request sharing
 gem 'rack-cors'
